@@ -28,3 +28,30 @@ const geradorGrid = () => {
 };
 
 geradorGrid();
+
+
+// Criando objetos de jogador com o atributo cor, definida estaticamente (por enquanto)
+let jogador1 = {
+  cor: "red",
+};
+
+let jogador2 = {
+  cor: "black",
+};
+
+// Função para criar as bolinhas
+const criarBolinhas = () => {
+  const bolinha1 = document.createElement("div"); // criando a div da bolinha
+  bolinha1.classList.add("bolinha"); // adicionando a classe bolinha, que define a altura e largura
+
+  const bolinha2 = document.createElement("div");
+  bolinha2.classList.add("bolinha");
+
+  bolinha1.style.background = jogador1.cor; // atribuindo o background da bolinha de acordo com o atributo cor, do objeto jogador
+  bolinha2.style.background = jogador2.cor;
+
+  document.body.appendChild(bolinha1); // inserindo a bolinha na tela, só para ver como ela fica
+  document.body.appendChild(bolinha2);
+};
+
+criarBolinhas();
