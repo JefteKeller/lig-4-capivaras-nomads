@@ -1,4 +1,4 @@
-let jogador = 1;
+let jogador = 1; // Jefte - Variavel que armazena a vez do jogador atual
 
 const gridDivPai = document.querySelector("#grid"); //Elemento pai no HTML que receberá as colunas.
 
@@ -17,7 +17,7 @@ const geradorGrid = () => {
     for (j = 0; j <= 6; j++) {
       const celulaDiv = document.createElement("div"); //Criando o elemento.
       celulaDiv.classList.add("cellContainer"); //Adicionando a classe cellContainer.
-      celulaDiv.dataset.position = `gridHTML[${i}][${j}]`; // Jefte - Adicionei um Dataset "position" para facilitar a identificação da célula //
+      celulaDiv.dataset.position = `${i}${j}`; // Jefte - Adicionei um Dataset "position" identificação da célula //
 
       listaCelulasDiv.push(celulaDiv);
       linhaDiv.append(celulaDiv);
@@ -41,27 +41,38 @@ let jogador2 = "black";
 const criarBolinhas = (jogador) => {
   const bolinha = document.createElement("div"); // criando a div da bolinha
   bolinha.classList.add("bolinha"); // adicionando a classe bolinha, que define a altura e largura
-
-  // const bolinha2 = document.createElement("div");
-  // bolinha2.classList.add("bolinha");
-
   bolinha.style.background = jogador; // atribuindo o background da bolinha de acordo com o atributo cor, do objeto jogador
-  // bolinha2.style.background = jogador2.cor;
 
-  // document.body.appendChild(bolinha); // inserindo a bolinha na tela, só para ver como ela fica
-  // document.body.appendChild(bolinha2);
-  return bolinha; // Jefte - Retorna a Div "bolinha" na cor correspondente ao jogador //
+  return bolinha; // Jefte - Retorna a Div "bolinha" na cor correspondente ao jogador
 };
 
 // Jefte - Função que adiciona as bolinhas na tela //
 const adicionarBolinha = (evt) => {
-  if (jogador == 1) {
+  if (evt.target.className !== "cellContainer") {
+    // Verifica se o destino do click é elegivel para receber a bolinha  //
+    return;
+  }
+
+  let posicao = evt.target.dataset.position.split(""); // Jefte - Declara a variavel "posicao" de acordo com o "Dataset" da celula seleciona pelo click //
+  posicao[0] = 0;
+  posicao[1] = parseInt(posicao[1]);
+
+  for (let i = 0; i < grid.length; i++) {
+    //Kevin -  Procura pela ultima posicao vazia
+    if (grid[i][posicao[1]] === 0) {
+      posicao[0] = i;
+    }
+  }
+
+  if (jogador === 1) {
     let bolaAtual = criarBolinhas(jogador1); // Jefte - Cria as bolinhas e adiciona no elemento do click //
-    evt.path[0].appendChild(bolaAtual);
+    gridHTML[posicao[0]][posicao[1]].appendChild(bolaAtual); //Kevin - Seleciona o elemento HTML na posicao especificada e realiza o "append" //
+    grid[posicao[0]][posicao[1]] = jogador;
     jogador = 2;
   } else {
     let bolaAtual = criarBolinhas(jogador2);
-    evt.path[0].appendChild(bolaAtual);
+    gridHTML[posicao[0]][posicao[1]].appendChild(bolaAtual);
+    grid[posicao[0]][posicao[1]] = jogador;
     jogador = 1;
   }
 };
