@@ -28,3 +28,78 @@ const geradorGrid = () => {
 };
 
 geradorGrid();
+
+const checkHorizontal = () => {
+  for (let linha = grid.length - 1; linha >= 0; linha--) {
+    for (let coluna = grid[0].length - 1; coluna >= 0; coluna--) {
+      if (
+        grid[linha][coluna] !== 0 && //Verifica se o elemento foi preenchido
+        coluna - 3 >= 0 && //Verifica se o elemento após 3 casas existe
+        grid[linha][coluna] === grid[linha][coluna - 3] //Verifica se o elemento 0 é igual ao elemento após 3 casas são iguais
+      ) {
+        return (
+          grid[linha][coluna] === grid[linha][coluna - 1] && //Verifica se o elemento 0 é igual ao elemento após 1 casas são iguais
+          grid[linha][coluna] === grid[linha][coluna - 2] //Verifica se o elemento 0 é igual ao elemento após 2 casas são iguais
+        );
+      }
+    }
+  }
+  return false;
+};
+
+const checkVertical = () => {
+  for (let linha = grid.length - 1; linha >= 0; linha--) {
+    for (let coluna = grid[0].length - 1; coluna >= 0; coluna--) {
+      if (
+        grid[linha][coluna] !== 0 &&
+        linha - 3 >= 0 &&
+        grid[linha][coluna] === grid[linha - 3][coluna]
+      ) {
+        return (
+          grid[linha][coluna] === grid[linha - 1][coluna] &&
+          grid[linha][coluna] === grid[linha - 2][coluna]
+        );
+      }
+    }
+  }
+  return false;
+};
+
+const checkDiagonalEsquerdaDireita = () => {
+  for (let linha = grid.length - 1; linha >= 0; linha--) {
+    for (let coluna = grid[0].length - 1; coluna >= 0; coluna--) {
+      if (
+        grid[linha][coluna] !== 0 &&
+        linha - 3 >= 0 &&
+        coluna - 3 >= 0 &&
+        grid[linha][coluna] === grid[linha - 3][coluna - 3]
+      ) {
+        return (
+          grid[linha][coluna] === grid[linha - 1][coluna - 1] &&
+          grid[linha][coluna] === grid[linha - 2][coluna - 2]
+        );
+      }
+    }
+  }
+  return false;
+};
+
+const checkDiagonalDireitaEsquerda = () => {
+  for (let linha = grid.length - 1; linha >= 0; linha--) {
+    for (let coluna = 0; coluna < grid[0].length; coluna++) {
+      if (
+        grid[linha][coluna] !== 0 &&
+        linha - 3 >= 0 &&
+        coluna + 3 >= 0 &&
+        grid[linha][coluna] === grid[linha - 3][coluna + 3]
+      ) {
+        return (
+          grid[linha][coluna] === grid[linha - 1][coluna + 1] &&
+          grid[linha][coluna] === grid[linha - 2][coluna + 2]
+        );
+      }
+    }
+  }
+  return false;
+};
+const checagemVitoria = (jogador) => {};
