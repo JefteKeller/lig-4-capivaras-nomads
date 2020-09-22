@@ -11,7 +11,6 @@ const checkHorizontal = (posicao) => {
     }
     //Se o contador não for interrompido significa que as peças estão em sequencia, sendo assim, um jogador vence
     if (counter === 4) {
-      console.log("checkHorizontal");
       return true;
     }
   }
@@ -29,7 +28,6 @@ const checkVertical = (posicao) => {
         counter = 0;
       }
       if (counter === 4) {
-        console.log("checkVertical");
         return true;
       }
     }
@@ -51,7 +49,6 @@ const checkDiagonal = (posicao) => {
           counter = 0;
         }
         if (counter === 4) {
-          console.log("checkDiagonal");
           return true;
         }
       }
@@ -73,14 +70,15 @@ const checkOutraDiagonal = (posicao) => {
         counter = 0;
       }
       if (counter === 4) {
-        console.log("checkOutraDiagonal");
         return true;
       }
     }
   }
   return false;
 };
+//Kevin ->
 const checkVitoria = (posicao, jogador) => {
+  //Vitoria recebe "verdadeiro" em sempre que qualquer um dos checks devolva o valor "true"
   let vitoria = false;
   vitoria =
     checkHorizontal(posicao) ||
@@ -88,17 +86,26 @@ const checkVitoria = (posicao, jogador) => {
     checkDiagonal(posicao) ||
     checkOutraDiagonal(posicao);
 
+  //Zeros recebe um string contendo todo o valor do array "grid", caso esse elemento ainda contenha o seu valor padrao (0) -
+  // - então o jogador ainda terá espaços para colocar peças, logo, não pode-se declarar um empate
   let zeros = JSON.stringify(grid);
   zeros = zeros.includes("0");
 
+  //Caso não haja mais espaços para colocar peças e nenhum jogador tenha sido declarado vencedor, declara-se um empate
   if (!zeros && !vitoria) {
-    console.log("empate");
-    return "Empate";
+    finalizaJogo("Empate");
   }
-  console.log(
-    vitoria ? `Vitória do jogador${jogador}` : "Não houve uma vitoria ainda"
-  );
-  return vitoria
-    ? `Vitória do jogador${jogador}`
-    : "Não houve uma vitoria ainda";
+  //Caso haja uma vitŕoa, o jogo será finalizado e as ultimas funções -
+  // - que terão o trabalho de remover event handlers e efetivamente finalizar o jogo serão chamadas
+  if (vitoria) {
+    finalizaJogo(
+      vitoria ? `Vitória do jogador${jogador}` : "Não houve uma vitoria ainda"
+    );
+  }
+};
+
+//Kevin ->
+const finalizaJogo = (resultado) => {
+  console.log(resultado);
+  gridDivPai.removeEventListener("click", adicionarBolinha);
 };
