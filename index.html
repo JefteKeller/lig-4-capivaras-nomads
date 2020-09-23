@@ -4,16 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="telas.css" />
     <title>Lig 4</title>
   </head>
 
   <body>
     <main>
+      <section id="telaInicial" class="telaInicial invisivel">
+        <div class="apresentacao">
+          <h2>Titulo</h2>
+          <h3>Regras</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, id
+            cumque impedit expedita quo sequi incidunt modi! Reprehenderit,
+            quibusdam corporis! Officiis commodi placeat quidem nam incidunt,
+            rem porro? In, distinctio.
+          </p>
+          <h4>Escolha seu Personagem</h4>
+        </div>
+
+        <div id="personagens" class="personagens">
+          <div class="personagem guerreiro">
+            <div class="personagem_overlay"></div>
+          </div>
+          <div class="personagem esqueleto">
+            <div class="personagem_overlay"></div>
+          </div>
+          <div class="personagem bandido-white">
+            <div class="personagem_overlay"></div>
+          </div>
+          <div class="personagem bandido-blue">
+            <div class="personagem_overlay"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- Débora - A div players para a identificação do turno, com o nome do jogador e imagem -->
       <div id="players">
         <div>
-          <img src="https://picsum.photos/50/50" alt="" /> <!-- Débora - aqui, vai a imagem/div que o jogador selecionar -->
-          <span id="jogador1">Jogador 1</span> <!-- Débora - span com id, para identificação no css e javascript -->
+          <img src="https://picsum.photos/50/50" alt="" />
+          <!-- Débora - aqui, vai a imagem/div que o jogador selecionar -->
+          <span id="jogador1">Jogador 1</span>
+          <!-- Débora - span com id, para identificação no css e javascript -->
         </div>
 
         <div>
@@ -21,7 +53,11 @@
           <span id="jogador2">Jogador 2</span>
         </div>
       </div>
-      <section id="grid" class="grid"></section>
+
+      <section class="telaJogo">
+        <div id="grid" class="grid"></div>
+      </section>
+      <section id="telaVitoria" class="telaVitoria invisivel"></section>
     </main>
   </body>
   <script src="js/script.js"></script>
