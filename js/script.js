@@ -57,6 +57,10 @@ const adicionarBolinha = (evt) => {
   posicao[0] = 0;
   posicao[1] = parseInt(posicao[1]);
 
+  if (grid[posicao[0]][posicao[1]] !== 0) {
+    return;
+  }
+
   for (let i = 0; i < grid.length; i++) {
     //Kevin -  Procura pela ultima posicao vazia
     if (grid[i][posicao[1]] === 0) {
@@ -64,16 +68,12 @@ const adicionarBolinha = (evt) => {
     }
   }
 
-  if (jogador === 1) {
-    let bolaAtual = criarBolinhas(jogador1); // Jefte - Cria as bolinhas e adiciona no elemento do click //
-    gridHTML[posicao[0]][posicao[1]].appendChild(bolaAtual); //Kevin - Seleciona o elemento HTML na posicao especificada e realiza o "append" //
-    grid[posicao[0]][posicao[1]] = jogador;
-    jogador = 2;
-  } else {
-    let bolaAtual = criarBolinhas(jogador2);
-    gridHTML[posicao[0]][posicao[1]].appendChild(bolaAtual);
-    grid[posicao[0]][posicao[1]] = jogador;
-    jogador = 1;
-  }
+  let bolaAtual = criarBolinhas(jogador === 1 ? jogador1 : jogador2); // Jefte - Cria as bolinhas e adiciona no elemento do click //
+  gridHTML[posicao[0]][posicao[1]].appendChild(bolaAtual); //Kevin - Seleciona o elemento HTML na posicao especificada e realiza o "append" //
+  grid[posicao[0]][posicao[1]] = jogador;
+  checkVitoria(posicao, jogador);
+
+  //Caso o jogador tenha o valor 1, será modificado para 2, caso contrario, para 1
+  jogador = jogador === 1 ? 2 : 1;
 };
 gridDivPai.addEventListener("click", adicionarBolinha); // Jefte - Adiciona um EventHandler que aciona a função de adicionar as Bolinhas na tela //
