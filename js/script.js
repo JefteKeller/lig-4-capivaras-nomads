@@ -73,6 +73,7 @@ const adicionarBolinha = (evt) => {
   grid[posicao[0]][posicao[1]] = jogador;
   checkVitoria(posicao, jogador);
 
+  //Caso o jogador tenha o valor 1, será modificado para 2, caso contrario, para 1
   jogador = jogador === 1 ? 2 : 1;
 };
 gridDivPai.addEventListener("click", adicionarBolinha); // Jefte - Adiciona um EventHandler que aciona a função de adicionar as Bolinhas na tela //

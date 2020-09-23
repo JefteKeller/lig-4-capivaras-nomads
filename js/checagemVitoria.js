@@ -98,9 +98,7 @@ const checkVitoria = (posicao, jogador) => {
   //Caso haja uma vitŕoa, o jogo será finalizado e as ultimas funções -
   // - que terão o trabalho de remover event handlers e efetivamente finalizar o jogo serão chamadas
   if (vitoria) {
-    finalizaJogo(
-      vitoria ? `Vitória do jogador${jogador}` : "Não houve uma vitoria ainda"
-    );
+    finalizaJogo(`Vitória do jogador${jogador}`);
   }
 };
 
