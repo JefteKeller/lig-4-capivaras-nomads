@@ -8,11 +8,7 @@ button.addEventListener("click", () => {
 
   document
     .querySelector("#vencedorImagem")
-    .classList.remove(
-      personagem.persona1,
-      personagem.persona2,
-      personagem.persona3
-    );
+    .classList.remove(personagem.persona1, personagem.persona2, personagem.persona3);
 
   personagem = {};
 
