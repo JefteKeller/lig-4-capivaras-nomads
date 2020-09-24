@@ -105,5 +105,5 @@ const checkVitoria = (posicao, jogador) => {
 //Kevin ->
 const finalizaJogo = (resultado) => {
   console.log(resultado);
-  gridDivPai.removeEventListener("click", adicionarBolinha);
+  gridDivPai.removeEventListener("click", adicionarPersonagem);
 };
