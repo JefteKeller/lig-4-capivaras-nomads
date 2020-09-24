@@ -3,10 +3,12 @@
 
 html {
   font-family: "Germania One";
-  font-size: 80%; /*Ajustando o tamanho da fonte para o mobile first*/
+  /* font-size: 90%; Ajustando o tamanho da fonte para o mobile first */
   color: rgb(230, 230, 230);
 
   overflow-x: hidden;
+
+  background: url("../images/bg-device.jpg") center;
 }
 body,
 main {
@@ -106,7 +108,6 @@ main {
 .esqueleto {
   background: url("../images/esqueleto.gif") no-repeat;
   background-size: contain;
-  background-position: center;
 }
 .bandido-white {
   background: url("../images/bandido-white.gif") no-repeat;
@@ -120,6 +121,12 @@ main {
 }
 /*---------------------------------- Acima de 640px ----------------------------------*/
 @media (min-width: 640px) {
+  html {
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
   .telaInicial,
   .telaFinal {
     top: 50%;

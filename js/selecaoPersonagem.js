@@ -23,6 +23,21 @@ const definirPersonagem = (evt) => {
     }
   }
   document.querySelector("#telaInicial").classList.add("invisivel");
+  document.querySelector("#players").classList.remove("invisivel");
+  document.querySelector("#grid").classList.remove("invisivel");
+
+  // Adicionar imagem dos personagens no placar
+  const img1 = document.createElement("img");
+  img1.src = `../images/${personagem.persona1}.gif`;
+
+  const p1 = document.getElementById("p1");
+  p1.appendChild(img1);
+
+  const img2 = document.createElement("img");
+  img2.src = `../images/${personagem.persona2}.gif`;
+
+  const p2 = document.getElementById("p2");
+  p2.appendChild(img2);
 };
 
 const boxPersonagem = document.querySelector("#personagens");

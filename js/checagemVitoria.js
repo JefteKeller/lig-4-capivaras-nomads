@@ -103,6 +103,8 @@ const checkVitoria = (posicao) => {
 //Kevin ->
 const finalizaJogo = () => {
   document.querySelector("#telaFinal").classList.remove("invisivel");
+  document.querySelector("#players").classList.add("invisivel");
+  document.querySelector("#grid").classList.add("invisivel");
 
   if (jogador === 1) {
     document
