@@ -18,7 +18,7 @@ const definirPersonagem = (evt) => {
     personagem.persona2 = opcoesDePersonas[getRamdom()]; // Jefte - Define o personagem 2 randomicamente, pegando como base o array de referencia //
 
     if (personagem.persona2 !== personagem.persona1) {
-      // Jefte - Executa o loop enquanto o personagem 1 e 2 sao iguais //
+      // Jefte - Executa o loop enquanto o personagem 1 e 2 são iguais //
       i++;
     }
   }
