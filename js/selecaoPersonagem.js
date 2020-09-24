@@ -26,6 +26,8 @@ const definirPersonagem = (evt) => {
       i++;
     }
   }
+  personagem.persona3 = "fantasma";
+
   document.querySelector("#telaInicial").classList.add("invisivel");
   document.querySelector("#telaJogo").classList.remove("invisivel");
 

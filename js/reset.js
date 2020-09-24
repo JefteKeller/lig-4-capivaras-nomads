@@ -20,10 +20,12 @@ button.addEventListener("click", () => {
 
   jogador = 1;
 
-  gridDivPai.addEventListener("click", adicionarPersonagem);
+  vencedorTitulo.textContent = "";
 
   document.querySelector("#telaInicial").classList.remove("invisivel");
   document.querySelector("#telaFinal").classList.add("invisivel");
 
   geradorGrid();
+
+  gridDivPai.addEventListener("click", adicionarPersonagem);
 });

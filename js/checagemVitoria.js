@@ -100,8 +100,6 @@ const checkVitoria = (posicao) => {
   }
 };
 
-personagem.persona3 = "fantasma";
-
 //Kevin ->
 const finalizaJogo = (resultado) => {
   gridDivPai.removeEventListener("click", adicionarPersonagem);
@@ -129,13 +127,12 @@ const finalizaJogo = (resultado) => {
         "Quem com ferro fere com ferro será ferido! Numa batalha sangrenta só a morte sai vencedora.";
     }
     vencedorTitulo.textContent = `Jogador ${jogador} Venceu!!!`;
-
   } else {
+    console.log(personagem.persona3);
     mensagemVitoria.textContent =
       "Os dois guerreiros lutaram bravamente até a morte, porém, não houve vencedor.";
-      document
+    document
       .querySelector("#vencedorImagem")
       .classList.add(personagem.persona3);
   }
-  
 };
