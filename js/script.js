@@ -32,13 +32,9 @@ const geradorGrid = () => {
 
 geradorGrid();
 
-// Débora - Pega os spans dos jogadores, no HTML
-const spanJogador1 = document.getElementById("turnoJogador1");
-const spanJogador2 = document.getElementById("turnoJogador2");
-
-// Débora - Começa com o jogador1, então, adiciona a
-// classe para identificação do turno do jogador, que neste caso, é do jogador 1
-spanJogador1.classList.add("jogadorAtual");
+// Débora - Pega as divs dos jogadores, no HTML
+const divJogador1 = document.getElementById("p1");
+const divJogador2 = document.getElementById("p2");
 
 // Jefte - Função que adiciona as bolinhas na tela //
 const adicionarPersonagem = (evt) => {
@@ -78,11 +74,11 @@ const adicionarPersonagem = (evt) => {
   // Débora - verifica qual é o jogador atual, tira a classe de identificação de turno do outro jogador
   // e atribui a classe de identificação ao jogador atual
   if (jogador === 1) {
-    spanJogador2.classList.remove("jogadorAtual");
-    spanJogador1.classList.add("jogadorAtual");
+    divJogador2.classList.remove("jogadorAtual");
+    divJogador1.classList.add("jogadorAtual");
   } else {
-    spanJogador1.classList.remove("jogadorAtual");
-    spanJogador2.classList.add("jogadorAtual");
+    divJogador1.classList.remove("jogadorAtual");
+    divJogador2.classList.add("jogadorAtual");
   }
 };
 gridDivPai.addEventListener("click", adicionarPersonagem); // Jefte - Adiciona um EventHandler que aciona a função de adicionar as Bolinhas na tela //

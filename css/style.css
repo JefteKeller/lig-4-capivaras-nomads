@@ -1,15 +1,24 @@
+body {
+  background: #0e0e0e81;
+}
+
+#grid {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
 }
 
 .row .cellContainer {
   display: flex;
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
+  width: 12%;
+  height: 6vh;
+  border: 1px solid #fff;
   border-radius: 5px;
 }
 
@@ -19,10 +28,9 @@
 
 main div#players {
   height: 7vh;
-  width: 40%;
-  margin: 0 auto;
-  columns: 200px 2;
-  column-rule: 1px solid #24242481;
+  columns: 100px 2;
+  column-rule: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 main div#players div {
@@ -34,18 +42,44 @@ main div#players div {
   font-family: sans-serif;
 }
 
-main div#players div span.jogadorAtual {
-  animation: playerTurn 300ms 300ms 3;
+main div#players div.jogadorAtual {
+  animation: playerTurn 300ms 200ms 3;
   font-weight: bold;
 }
 
-/* Podemos mudar isso, claro, mas é só para idenficação, atualmente */
+main div#players div.jogadorAtual span {
+  animation: playerTurnSpan 300ms 200ms 3;
+  border-bottom: 1px solid #fff;
+}
 
+/* Podemos mudar isso, claro, mas é só para idenficação, atualmente */
 @keyframes playerTurn {
   0% {
-    color: black;
+    color: #fff;
   }
   100% {
     color: red;
+  }
+}
+
+@keyframes playerTurnSpan {
+  0% {
+    border: none;
+  }
+
+  100% {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+@media (min-width: 640px) {
+  .row .cellContainer {
+    width: 4%;
+    height: 7vh;
+  }
+
+  #players {
+    width: 40%;
+    margin: 0 auto;
   }
 }
