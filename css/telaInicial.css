@@ -99,20 +99,24 @@ main {
 }
 /*---------------------------------- imagem de cada personagem ----------------------------------*/
 .guerreiro {
-  background: url("../images/1.png") no-repeat;
+  background: url("../images/guerreiro.gif") no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .esqueleto {
-  background: url("../images/bigGuy.png") no-repeat;
-  background-size: cover;
+  background: url("../images/esqueleto.gif") no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 .bandido-white {
-  background: url("../images/steve.png") no-repeat;
+  background: url("../images/bandido-white.gif") no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .bandido-blue {
-  background: url("../images/cucumber.png") no-repeat;
+  background: url("../images/bandido-blue.gif") no-repeat;
   background-size: cover;
+  background-position: center;
 }
 /*---------------------------------- Acima de 640px ----------------------------------*/
 @media (min-width: 640px) {
@@ -123,12 +127,14 @@ main {
     height: 60%;
     min-height: unset;
   }
-  .telaInicial .personagens {
-    width: 80%;
+  .telaInicial .apresentacao {
+    width: 90%;
+    height: 65%;
     margin: 0 auto;
   }
-  .telaInicial .apresentacao {
-    width: 80%;
+  .telaInicial .personagens {
+    width: 90%;
+    height: 35%;
     margin: 0 auto;
   }
   .telaInicial .personagens .personagem {
@@ -143,26 +149,10 @@ main {
 }
 @media (min-width: 1024px) {
   .telaInicial .personagens {
-    width: 60%;
-    margin: 0 auto;
+    width: 70%;
   }
   .telaInicial .apresentacao {
-    width: 60%;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 1200px) {
-  .telaInicial .personagens {
-    width: 60%;
-    margin: 0 auto;
-  }
-  .telaInicial .apresentacao {
-    width: 60%;
-    margin: 0 auto;
-  }
-  .telaInicial .personagens .personagem {
-    max-width: 160px;
-    max-height: 160px;
+    width: 70%;
   }
 }
 
