@@ -6,32 +6,33 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/telaInicial.css" />
     <link rel="stylesheet" href="./css/telaFinal.css" />
-    <title>Lig 4</title>
+    <title>Lig of Legends</title>
   </head>
 
   <body>
     <main>
       <section id="telaInicial" class="telaInicial">
         <div class="apresentacao">
-          <h2>Titulo</h2>
+          <h2>Lig of Legends</h2>
           <p>
-            " Um guerreiro andava solitário pela floresta quando ouviu um
-            barulho suspeito a sua direita, muito atento começou a espreitar
-            pela direita esperando o pior, de repente ele ouve um barulho também
-            a sua esquerda - ele estava cercado! Dois bandidos aparecem, um de
+            Um guerreiro andava solitário pela floresta quando ouviu um barulho
+            suspeito a sua direita, muito atento começou a espreitar pela
+            direita esperando o pior, de repente ele ouve um barulho também a
+            sua esquerda - ele estava cercado! Dois bandidos aparecem, um de
             cada lado e bradam: Nos dê tudo que você tem ou tiraremos a sua
             vida! E agora? Quem vencerá? Os bandidos, o guerreiro ou a morte
             consumirá a todos ? Escolha seu personagem e decida o final dessa
-            história. "
+            história.
           </p>
-          <h3>Regras</h3>
+          <h3>Instruções</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, id
-            cumque impedit expedita quo sequi incidunt modi! Reprehenderit,
-            quibusdam corporis! Officiis commodi placeat quidem nam incidunt,
-            rem porro? In, distinctio.
+            Seu objetivo, neste jogo, é inserir seu personagem nos quadros da
+            tabela, alternadamente, contra o seu oponente
+            <br />
+            O vencedor é aquele que formar 4 de seus personagens na diagonal,
+            vertical ou horizontal.
           </p>
-          <h4>Escolha seu Personagem</h4>
+          <h4>Escolha seu Personagem:</h4>
         </div>
 
         <div id="personagens" class="personagens">
@@ -50,29 +51,32 @@
         </div>
       </section>
 
-      <div id="players" class="invisivel">
-        <div id="p1" class="jogadorAtual">
-          <span>Jogador 1</span>
+      <section id="telaJogo" class="telaJogo invisivel">
+        <div id="players">
+          <div id="p1" class="jogadorAtual">
+            <span>Jogador 1</span>
+          </div>
+
+          <div id="p2">
+            <span>Jogador 2</span>
+          </div>
         </div>
 
-        <div id="p2">
-          <span>Jogador 2</span>
-        </div>
-      </div>
-
-      <section class="telaJogo">
-        <div id="grid" class="grid invisivel"></div>
+        <div id="grid" class="grid"></div>
       </section>
       <section id="telaFinal" class="telaFinal invisivel">
         <div id="vencedor" class="vencedorContainer">
-          <div id="vencedorImagem" class="vencedorImagem guerreiro"></div>
+          <div id="vencedorImagem" class="vencedorImagem"></div>
           <h2 id="vencedorTitulo" class="vencedorTitulo"></h2>
         </div>
         <p id="mensagemVitoria" class="mensagemVitoria">Vitoria!</p>
+
+        <button id="reset" >Jogar novamente</button>
       </section>
     </main>
   </body>
   <script src="./js/script.js"></script>
   <script src="./js/selecaoPersonagem.js"></script>
   <script src="./js/checagemVitoria.js"></script>
+  <script src="./js/reset.js"></script>
 </html>

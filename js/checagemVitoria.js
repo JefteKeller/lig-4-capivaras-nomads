@@ -96,28 +96,46 @@ const checkVitoria = (posicao) => {
   //Caso haja uma vitória, o jogo será finalizado e as ultimas funções -
   // - que terão o trabalho de remover event handlers e efetivamente finalizar o jogo serão chamadas
   if (vitoria) {
-    finalizaJogo();
+    finalizaJogo("Vitoria");
   }
 };
 
+personagem.persona3 = "fantasma";
+
 //Kevin ->
-const finalizaJogo = () => {
-  document.querySelector("#telaFinal").classList.remove("invisivel");
-  document.querySelector("#players").classList.add("invisivel");
-  document.querySelector("#grid").classList.add("invisivel");
-
-  if (jogador === 1) {
-    document
-      .querySelector("#vencedorImagem")
-      .classList.add(personagem.persona1);
-  } else {
-    document
-      .querySelector("#vencedorImagem")
-      .classList.add(personagem.persona2);
-  }
-
-  document.querySelector(
-    "#vencedorTitulo"
-  ).textContent = `O jogador ${jogador} Venceu!!!`;
+const finalizaJogo = (resultado) => {
   gridDivPai.removeEventListener("click", adicionarPersonagem);
+
+  setTimeout(() => {
+    document.querySelector("#telaFinal").classList.remove("invisivel");
+    document.querySelector("#telaJogo").classList.add("invisivel");
+  }, 500);
+
+  let vencedorTitulo = document.querySelector("#vencedorTitulo");
+  let mensagemVitoria = document.querySelector("#mensagemVitoria");
+
+  if (resultado !== "Empate") {
+    if (jogador === 1) {
+      document
+        .querySelector("#vencedorImagem")
+        .classList.add(personagem.persona1);
+      mensagemVitoria.textContent =
+        "Nada supera a habilidade de um guerreiro bem treinado!";
+    } else {
+      document
+        .querySelector("#vencedorImagem")
+        .classList.add(personagem.persona2);
+      mensagemVitoria.textContent =
+        "Quem com ferro fere com ferro será ferido! Numa batalha sangrenta só a morte sai vencedora.";
+    }
+    vencedorTitulo.textContent = `Jogador ${jogador} Venceu!!!`;
+
+  } else {
+    mensagemVitoria.textContent =
+      "Os dois guerreiros lutaram bravamente até a morte, porém, não houve vencedor.";
+      document
+      .querySelector("#vencedorImagem")
+      .classList.add(personagem.persona3);
+  }
+  
 };

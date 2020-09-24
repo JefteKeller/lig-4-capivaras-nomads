@@ -1,4 +1,4 @@
-const personagem = {}; // Jefte - Objeto que armazena os personagens escolhidos
+let personagem = {}; // Jefte - Objeto que armazena os personagens escolhidos
 const opcoesDePersonas = [
   // Jefte - Catalogo de classes de acordo com os personagens disponiveis
   "guerreiro",
@@ -12,6 +12,10 @@ const getRamdom = () => {
 };
 
 const definirPersonagem = (evt) => {
+  if (evt.target.classList.length !== 2) {
+    return;
+  }
+
   personagem.persona1 = evt.target.classList[1]; // Jefte - Define o personagem do jogador 1, baseado na Segunda classe do personagem selecionado na pagina //
 
   for (let i = 0; i < 1; ) {
@@ -23,21 +27,19 @@ const definirPersonagem = (evt) => {
     }
   }
   document.querySelector("#telaInicial").classList.add("invisivel");
-  document.querySelector("#players").classList.remove("invisivel");
-  document.querySelector("#grid").classList.remove("invisivel");
+  document.querySelector("#telaJogo").classList.remove("invisivel");
 
   // Adicionar imagem dos personagens no placar
-  const img1 = document.createElement("img");
-  img1.src = `../images/${personagem.persona1}.gif`;
+  const img1 = document.createElement("div");
+  // img1.src = `../images/${personagem.persona1}.gif`;
+  img1.classList.add("personagemPlacar", personagem.persona1);
 
-  const p1 = document.getElementById("p1");
-  p1.appendChild(img1);
+  divJogador1.appendChild(img1);
 
-  const img2 = document.createElement("img");
-  img2.src = `../images/${personagem.persona2}.gif`;
+  const img2 = document.createElement("div");
+  img2.classList.add("personagemPlacar", personagem.persona2);
 
-  const p2 = document.getElementById("p2");
-  p2.appendChild(img2);
+  divJogador2.appendChild(img2);
 };
 
 const boxPersonagem = document.querySelector("#personagens");
