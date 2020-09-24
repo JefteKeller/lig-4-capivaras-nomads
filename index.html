@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="telas.css" />
+    <link rel="stylesheet" href="telaInicial.css" />
+    <link rel="stylesheet" href="telaFinal.css" />
     <title>Lig 4</title>
   </head>
 
@@ -40,7 +41,7 @@
       </section>
 
       <!-- Débora - A div players para a identificação do turno, com o nome do jogador e imagem -->
-      <div id="players">
+      <div id="players" class="">
         <div>
           <img src="https://picsum.photos/50/50" alt="" />
           <!-- Débora - aqui, vai a imagem/div que o jogador selecionar -->
@@ -57,7 +58,23 @@
       <section class="telaJogo">
         <div id="grid" class="grid"></div>
       </section>
-      <section id="telaVitoria" class="telaVitoria invisivel"></section>
+      <section id="telaFinal" class="telaFinal invisivel">
+        <div id="vencedor" class="vencedorContainer">
+          <div id="vencedorImagem" class="vencedorImagem guerreiro"></div>
+          <h2 id="vencedorTitulo" class="vencedorTitulo">
+            O jogador 12312312 Venceu!!!
+          </h2>
+        </div>
+        <p id="mensagemVitoria" class="mensagemVitoria">
+          " um guerreiro andava solitário pela floresta quando ouviu um barulho
+          suspeito a sua direita, muito atento começou a espreitar pela direita
+          esperando o pior, de repente ele ouve um barulho também a sua esquerda
+          - ele estava cercado! Dois bandidos aparecem, um de cada lado e
+          bradam: Nos dê tudo que você tem ou tiraremos a sua vida! E agora?
+          Quem vencerá? Os bandidos, o guerreiro ou a morte consumirá a todos ?
+          Escolha seu personagem e decida o final dessa história. "
+        </p>
+      </section>
     </main>
   </body>
   <script src="js/script.js"></script>

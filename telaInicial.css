@@ -5,6 +5,8 @@ html {
   font-family: "germania one";
   font-size: 80%; /*Ajustando o tamanho da fonte para o mobile first*/
   color: rgb(230, 230, 230);
+
+  overflow-x: hidden;
 }
 body,
 main {
@@ -25,7 +27,8 @@ main {
 }
 
 /*Section telaInicial -> centralização e pocisionamento do elemento pai*/
-.telaInicial {
+.telaInicial,
+.telaFinal {
   width: 100%;
   min-height: 100%;
 
@@ -110,7 +113,8 @@ main {
 }
 /*---------------------------------- Acima de 640px ----------------------------------*/
 @media (min-width: 640px) {
-  .telaInicial {
+  .telaInicial,
+  .telaFinal {
     top: 50%;
     transform: translate(0, -50%); /*Centralização vertical*/
     height: 60%;
