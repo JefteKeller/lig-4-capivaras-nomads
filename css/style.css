@@ -1,0 +1,47 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+}
+
+.row .cellContainer {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+main div#players {
+  height: 7vh;
+  width: 40%;
+  margin: 0 auto;
+  columns: 200px 2;
+  column-rule: 1px solid #24242481;
+}
+
+main div#players div {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+main div#players div span.jogadorAtual {
+  animation: playerTurn 300ms 300ms 3;
+  font-weight: bold;
+}
+
+/* Podemos mudar isso, claro, mas é só para idenficação, atualmente */
+
+@keyframes playerTurn {
+  0% {
+    color: black;
+  }
+  100% {
+    color: red;
+  }
+}

@@ -37,23 +37,21 @@ const checkVertical = (posicao) => {
 const checkDiagonal = (posicao) => {
   let counter = 0;
 
-  try {
-    for (let i = -3; i <= 3; i++) {
-      if (posicao[0] - i >= 0 && posicao[0] - i < grid.length) {
-        if (
-          //Realiza a comparação diagonalmente onde os indexes são iguais
-          grid[posicao[0]][posicao[1]] === grid[posicao[0] - i][posicao[1] - i]
-        ) {
-          counter++;
-        } else {
-          counter = 0;
-        }
-        if (counter === 4) {
-          return true;
-        }
+  for (let i = -3; i <= 3; i++) {
+    if (posicao[0] - i >= 0 && posicao[0] - i < grid.length) {
+      if (
+        //Realiza a comparação diagonalmente onde os indexes são iguais
+        grid[posicao[0]][posicao[1]] === grid[posicao[0] - i][posicao[1] - i]
+      ) {
+        counter++;
+      } else {
+        counter = 0;
+      }
+      if (counter === 4) {
+        return true;
       }
     }
-  } catch (error) {}
+  }
   return false;
 };
 const checkOutraDiagonal = (posicao) => {
@@ -77,7 +75,7 @@ const checkOutraDiagonal = (posicao) => {
   return false;
 };
 //Kevin ->
-const checkVitoria = (posicao, jogador) => {
+const checkVitoria = (posicao) => {
   //Vitoria recebe "verdadeiro" em sempre que qualquer um dos checks devolva o valor "true"
   let vitoria = false;
   vitoria =
@@ -95,15 +93,29 @@ const checkVitoria = (posicao, jogador) => {
   if (!zeros && !vitoria) {
     finalizaJogo("Empate");
   }
-  //Caso haja uma vitŕoa, o jogo será finalizado e as ultimas funções -
+  //Caso haja uma vitória, o jogo será finalizado e as ultimas funções -
   // - que terão o trabalho de remover event handlers e efetivamente finalizar o jogo serão chamadas
   if (vitoria) {
-    finalizaJogo(`Vitória do jogador${jogador}`);
+    finalizaJogo();
   }
 };
 
 //Kevin ->
-const finalizaJogo = (resultado) => {
-  console.log(resultado);
+const finalizaJogo = () => {
+  document.querySelector("#telaFinal").classList.remove("invisivel");
+
+  if (jogador === 1) {
+    document
+      .querySelector("#vencedorImagem")
+      .classList.add(personagem.persona1);
+  } else {
+    document
+      .querySelector("#vencedorImagem")
+      .classList.add(personagem.persona2);
+  }
+
+  document.querySelector(
+    "#vencedorTitulo"
+  ).textContent = `O jogador ${jogador} Venceu!!!`;
   gridDivPai.removeEventListener("click", adicionarPersonagem);
 };
