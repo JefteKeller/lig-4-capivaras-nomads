@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Germania+One&display=swap");
 
 html {
-  font-family: "germania one";
+  font-family: "Germania One";
   font-size: 80%; /*Ajustando o tamanho da fonte para o mobile first*/
   color: rgb(230, 230, 230);
 
@@ -37,8 +37,11 @@ main {
 
   background-color: rgba(0, 0, 0, 0.85);
   position: absolute;
-  z-index: 1;
-
+}
+.telaInicial {
+  transition: 0.5s ease-in-out;
+}
+.telaFinal {
   transition: 0.5s ease-in-out;
 }
 /*---------------------------------- Apresentação dos textos ----------------------------------*/
@@ -96,19 +99,19 @@ main {
 }
 /*---------------------------------- imagem de cada personagem ----------------------------------*/
 .guerreiro {
-  background: url("images/1.png") no-repeat;
+  background: url("../images/1.png") no-repeat;
   background-size: cover;
 }
 .esqueleto {
-  background: url("images/bigGuy.png") no-repeat;
+  background: url("../images/bigGuy.png") no-repeat;
   background-size: cover;
 }
 .bandido-white {
-  background: url("images/steve.png") no-repeat;
+  background: url("../images/steve.png") no-repeat;
   background-size: cover;
 }
 .bandido-blue {
-  background: url("images/cucumber.png") no-repeat;
+  background: url("../images/cucumber.png") no-repeat;
   background-size: cover;
 }
 /*---------------------------------- Acima de 640px ----------------------------------*/
@@ -164,6 +167,6 @@ main {
 }
 
 .invisivel {
-  opacity: 0;
+  visibility: hidden;
   transform: translate(-100%, -50%);
 }

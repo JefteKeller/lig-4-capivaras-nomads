@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="telaInicial.css" />
-    <link rel="stylesheet" href="telaFinal.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/telaInicial.css" />
+    <link rel="stylesheet" href="./css/telaFinal.css" />
     <title>Lig 4</title>
   </head>
 
   <body>
     <main>
-      <section id="telaInicial" class="telaInicial invisivel">
+      <section id="telaInicial" class="telaInicial">
         <div class="apresentacao">
           <h2>Titulo</h2>
+          <p>
+            " Um guerreiro andava solitário pela floresta quando ouviu um
+            barulho suspeito a sua direita, muito atento começou a espreitar
+            pela direita esperando o pior, de repente ele ouve um barulho também
+            a sua esquerda - ele estava cercado! Dois bandidos aparecem, um de
+            cada lado e bradam: Nos dê tudo que você tem ou tiraremos a sua
+            vida! E agora? Quem vencerá? Os bandidos, o guerreiro ou a morte
+            consumirá a todos ? Escolha seu personagem e decida o final dessa
+            história. "
+          </p>
           <h3>Regras</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, id
@@ -61,22 +71,13 @@
       <section id="telaFinal" class="telaFinal invisivel">
         <div id="vencedor" class="vencedorContainer">
           <div id="vencedorImagem" class="vencedorImagem guerreiro"></div>
-          <h2 id="vencedorTitulo" class="vencedorTitulo">
-            O jogador 12312312 Venceu!!!
-          </h2>
+          <h2 id="vencedorTitulo" class="vencedorTitulo"></h2>
         </div>
-        <p id="mensagemVitoria" class="mensagemVitoria">
-          " um guerreiro andava solitário pela floresta quando ouviu um barulho
-          suspeito a sua direita, muito atento começou a espreitar pela direita
-          esperando o pior, de repente ele ouve um barulho também a sua esquerda
-          - ele estava cercado! Dois bandidos aparecem, um de cada lado e
-          bradam: Nos dê tudo que você tem ou tiraremos a sua vida! E agora?
-          Quem vencerá? Os bandidos, o guerreiro ou a morte consumirá a todos ?
-          Escolha seu personagem e decida o final dessa história. "
-        </p>
+        <p id="mensagemVitoria" class="mensagemVitoria">Vitoria!</p>
       </section>
     </main>
   </body>
-  <script src="js/script.js"></script>
-  <script src="js/checagemVitoria.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/selecaoPersonagem.js"></script>
+  <script src="./js/checagemVitoria.js"></script>
 </html>
