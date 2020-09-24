@@ -33,8 +33,8 @@ const geradorGrid = () => {
 geradorGrid();
 
 // Débora - Pega os spans dos jogadores, no HTML
-const spanJogador1 = document.getElementById("jogador1");
-const spanJogador2 = document.getElementById("jogador2");
+const spanJogador1 = document.getElementById("turnoJogador1");
+const spanJogador2 = document.getElementById("turnoJogador2");
 
 // Débora - Começa com o jogador1, então, adiciona a
 // classe para identificação do turno do jogador, que neste caso, é do jogador 1

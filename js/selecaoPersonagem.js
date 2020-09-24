@@ -18,11 +18,15 @@ const definirPersonagem = (evt) => {
     personagem.persona2 = opcoesDePersonas[getRamdom()]; // Jefte - Define o personagem 2 randomicamente, pegando como base o array de referencia //
 
     if (personagem.persona2 !== personagem.persona1) {
-      // Jefte - Executa o loop enquanto o personagem 1 e 2 sao iguais //
+      // Jefte - Executa o loop enquanto o personagem 1 e 2 são iguais //
       i++;
     }
   }
-  document.querySelector("#telaInicial").classList.add("invisivel");
+  document.querySelector("#telaInicial").classList.toggle("invisivel");
+  document.querySelector("#telaJogo").classList.toggle("invisivel");
+  document.querySelector("#personaJogador1").classList.add(personagem.persona1);
+  document.querySelector("#personaJogador2").classList.add(personagem.persona2);
+  document.querySelector("#players").classList.toggle("invisivel");
 };
 
 const boxPersonagem = document.querySelector("#personagens");
