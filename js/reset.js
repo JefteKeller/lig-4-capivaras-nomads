@@ -6,6 +6,10 @@ button.addEventListener("click", () => {
   grid = [];
   gridHTML = [];
 
+  document
+    .querySelector("#vencedorImagem")
+    .classList.remove(personagem.persona1, personagem.persona2, personagem.persona3);
+
   personagem = {};
 
   divJogador1.querySelector("div").remove();
