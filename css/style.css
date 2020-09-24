@@ -13,6 +13,10 @@
   border-radius: 5px;
 }
 
+.jogadores {
+  width: 25%;
+}
+
 main div#players {
   height: 7vh;
   width: 40%;
