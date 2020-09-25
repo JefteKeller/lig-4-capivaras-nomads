@@ -43,49 +43,47 @@ const adicionarPersonagem = (evt) => {
     return;
   }
 
-  setTimeout(() => {
-    let posicao = evt.target.dataset.position.split(""); // Jefte - Declara a variavel "posicao" de acordo com o "Dataset" da celula seleciona pelo click //
-    posicao[0] = 0;
-    posicao[1] = parseInt(posicao[1]);
+  let posicao = evt.target.dataset.position.split(""); // Jefte - Declara a variavel "posicao" de acordo com o "Dataset" da celula seleciona pelo click //
+  posicao[0] = 0;
+  posicao[1] = parseInt(posicao[1]);
 
-    if (grid[posicao[0]][posicao[1]] !== 0) {
-      return;
+  if (grid[posicao[0]][posicao[1]] !== 0) {
+    return;
+  }
+
+  for (let i = 0; i < grid.length; i++) {
+    //Kevin -  Procura pela ultima posicao vazia
+    if (grid[i][posicao[1]] === 0) {
+      posicao[0] = i;
     }
+  }
 
-    for (let i = 0; i < grid.length; i++) {
-      //Kevin -  Procura pela ultima posicao vazia
-      if (grid[i][posicao[1]] === 0) {
-        posicao[0] = i;
-      }
-    }
+  const div = document.createElement("div");
+  div.classList.add("personaCell");
 
-    const div = document.createElement("div");
-    div.classList.add("personaCell");
+  //Kevin, Jefte - Seleciona o elemento HTML na posicao especificada e atribui a classe correspondente ao personagem escolhido //
+  if (jogador === 1) {
+    div.classList.add(personagem.persona1, "entradaJ1");
+    gridHTML[posicao[0]][posicao[1]].appendChild(div);
+  } else {
+    div.classList.add(personagem.persona2, "entradaJ2");
+    gridHTML[posicao[0]][posicao[1]].appendChild(div);
+  }
 
-    //Kevin, Jefte - Seleciona o elemento HTML na posicao especificada e atribui a classe correspondente ao personagem escolhido //
-    if (jogador === 1) {
-      div.classList.add(personagem.persona1, "entradaJ1");
-      gridHTML[posicao[0]][posicao[1]].appendChild(div);
-    } else {
-      div.classList.add(personagem.persona2, "entradaJ2");
-      gridHTML[posicao[0]][posicao[1]].appendChild(div);
-    }
+  grid[posicao[0]][posicao[1]] = jogador; // Reporta a posicao atual como "ocupada" pelo Jogador da vez
+  checkVitoria(posicao, jogador);
 
-    grid[posicao[0]][posicao[1]] = jogador; // Reporta a posicao atual como "ocupada" pelo Jogador da vez
-    checkVitoria(posicao, jogador);
+  //Caso o jogador tenha o valor 1, será modificado para 2, caso contrario, para 1
+  jogador = jogador === 1 ? 2 : 1;
 
-    //Caso o jogador tenha o valor 1, será modificado para 2, caso contrario, para 1
-    jogador = jogador === 1 ? 2 : 1;
-
-    // Débora - verifica qual é o jogador atual, tira a classe de identificação de turno do outro jogador
-    // e atribui a classe de identificação ao jogador atual
-    if (jogador === 1) {
-      divJogador2.classList.remove("jogadorAtual");
-      divJogador1.classList.add("jogadorAtual");
-    } else {
-      divJogador1.classList.remove("jogadorAtual");
-      divJogador2.classList.add("jogadorAtual");
-    }
-  }, 250);
+  // Débora - verifica qual é o jogador atual, tira a classe de identificação de turno do outro jogador
+  // e atribui a classe de identificação ao jogador atual
+  if (jogador === 1) {
+    divJogador2.classList.remove("jogadorAtual");
+    divJogador1.classList.add("jogadorAtual");
+  } else {
+    divJogador1.classList.remove("jogadorAtual");
+    divJogador2.classList.add("jogadorAtual");
+  }
 };
 gridDivPai.addEventListener("click", adicionarPersonagem); // Jefte - Adiciona um EventHandler que aciona a função de adicionar as Bolinhas na tela //
