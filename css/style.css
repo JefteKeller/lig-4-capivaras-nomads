@@ -6,8 +6,7 @@
 
 #grid {
   position: relative;
-  top: 50%;
-  transform: translateY(50%);
+  padding-top: 5rem;
 }
 
 .row {
@@ -96,15 +95,6 @@ button:hover {
   background: rgb(41, 39, 39);
 }
 
-@media (min-width: 640px) {
-  .row .cellContainer {
-    min-width: 8vh;
-    min-height: 8vh;
-    max-width: 8vh;
-    max-height: 8vh;
-  }
-}
-
 /* Podemos mudar isso, claro, mas é só para idenficação, atualmente */
 @keyframes playerTurn {
   0% {
@@ -127,8 +117,12 @@ button:hover {
 
 @media (min-width: 640px) {
   .row .cellContainer {
-    width: 4%;
-    height: 7vh;
+    width: 8vh;
+    height: 8vh;
+    max-width: 8vh;
+    max-height: 8vh;
+
+    margin: 2px 4px 2px 4px;
   }
 
   #players {
