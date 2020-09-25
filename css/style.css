@@ -43,7 +43,7 @@
 }
 
 main div#players {
-  height: 7vh;
+  height: 9vh;
   columns: 100px 2;
   column-rule: 1px solid #219ebc;
   border-bottom: 1px solid #219ebc;
