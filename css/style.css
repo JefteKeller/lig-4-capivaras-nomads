@@ -6,8 +6,7 @@
 
 #grid {
   position: relative;
-  top: 50%;
-  transform: translateY(50%);
+  padding-top: 5rem;
 }
 
 .row {
@@ -18,8 +17,12 @@
 
 .row .cellContainer {
   display: flex;
-  width: 12%;
-  height: 6vh;
+
+  width: 5.5vh;
+  height: 5.5vh;
+  max-width: 5.5vh;
+  max-height: 5.5vh;
+
   border-right: 2px solid #685253;
   border-bottom: 2px solid #685253;
   border-top: 5px solid #c9ada7;
@@ -43,7 +46,7 @@
 }
 
 main div#players {
-  height: 9vh;
+  min-height: 9vh;
   columns: 100px 2;
   column-rule: 1px solid #219ebc;
   border-bottom: 1px solid #219ebc;
@@ -114,8 +117,12 @@ button:hover {
 
 @media (min-width: 640px) {
   .row .cellContainer {
-    width: 4%;
-    height: 7vh;
+    width: 8vh;
+    height: 8vh;
+    max-width: 8vh;
+    max-height: 8vh;
+
+    margin: 2px 4px 2px 4px;
   }
 
   #players {

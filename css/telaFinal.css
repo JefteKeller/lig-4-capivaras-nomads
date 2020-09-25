@@ -37,6 +37,14 @@
 
   font-size: 1.5rem;
 }
+
+.telaJogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  flex-direction: column;
+}
 @media (min-width: 640px) {
   .telaFinal {
     top: 50%;
