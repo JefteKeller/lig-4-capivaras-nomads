@@ -96,7 +96,7 @@ button:hover {
   background: rgb(41, 39, 39);
 }
 
-/* Podemos mudar isso, claro, mas é só para idenficação, atualmente */
+/* Animação de idenficação do Jogador na vez */
 @keyframes playerTurn {
   0% {
     color: #fff;
