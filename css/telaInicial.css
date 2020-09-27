@@ -7,7 +7,7 @@ html {
 
   overflow-x: hidden;
 
-  background: url("../images/bg-device.jpg") center;
+  background: url("../images/bg-device.jpg") bottom;
 }
 body,
 main {
@@ -31,6 +31,11 @@ h2,
 h3,
 h4 {
   color: #219ebc;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 1rem;
 }
 /*Section telaInicial -> centralização e pocisionamento do elemento pai*/
 .telaInicial,
@@ -63,12 +68,12 @@ h4 {
 
   height: 40%;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 .telaInicial .apresentacao h4 {
   text-align: center;
   justify-self: flex-end;
-  margin-top: 2rem;
+  margin: 0 auto;
 }
 /*---------------------------------- Apresentação dos personagens ----------------------------------*/
 .telaInicial .personagens {
@@ -134,12 +139,12 @@ h4 {
   background-size: cover;
   background-position: center;
 }
+
 /*---------------------------------- Acima de 640px ----------------------------------*/
 @media (min-width: 640px) {
   html {
     background: url("../images/bg.jpg") no-repeat;
     background-size: cover;
-    background-position: center;
   }
 
   .telaInicial,
@@ -157,7 +162,7 @@ h4 {
   .telaInicial .personagens {
     width: 90%;
     height: 35%;
-    margin: 0 auto;
+    margin: 1rem auto;
   }
   .telaInicial .personagens .personagem {
     width: 25%;
