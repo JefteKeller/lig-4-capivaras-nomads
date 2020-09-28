@@ -47,6 +47,7 @@
 
 main div#players {
   min-height: 9vh;
+  min-width: 80%;
   columns: 100px 2;
   column-rule: 1px solid #219ebc;
   border-bottom: 1px solid #219ebc;
@@ -95,7 +96,7 @@ button:hover {
   background: rgb(41, 39, 39);
 }
 
-/* Podemos mudar isso, claro, mas é só para idenficação, atualmente */
+/* Animação de idenficação do Jogador na vez */
 @keyframes playerTurn {
   0% {
     color: #fff;
@@ -125,8 +126,9 @@ button:hover {
     margin: 2px 4px 2px 4px;
   }
 
-  #players {
-    width: 40%;
+  main div#players {
+    min-width: 40%;
+    min-height: 6vh;
     margin: 2rem auto;
   }
 }
