@@ -1,3 +1,4 @@
+ https://lig-4-capivaras-nomads.vercel.app
  <!-- //Um titulo e regras do jogo
  //ao entrar no jogo aparece  um grid vazio de 7X6 
  //escolhe a cor ou é informado sua cor 
